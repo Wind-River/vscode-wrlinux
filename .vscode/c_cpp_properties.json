@@ -1,0 +1,36 @@
+{
+    "env": {
+        "sdkroot": "${config:wrlinuxsdk.sdkroot}", 
+        "targettriplet": "${config:wrlinuxsdk.targettriplet}",
+        "hosttriplet": "${config:wrlinuxsdk.hosttriplet}"
+    },
+    "configurations": [
+        {
+            "name": "WRLinux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${sdkroot}\\sysroots\\${targettriplet}\\usr\\include",
+                "${sdkroot}\\sysroots\\${hosttriplet}\\usr\\lib\\x86_64-wrs-linux\\gcc\\x86_64-wrs-linux\\9.2.0\\include"
+            ],
+            "defines": [
+                "__linux__",
+                "__x86_64__",
+                "_GNU_SOURCE"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${sdkroot}\\sysroots\\${targettriplet}\\usr\\include",
+                    "${sdkroot}\\sysroots\\${hosttriplet}\\usr\\lib\\x86_64-wrs-linux\\gcc\\x86_64-wrs-linux\\9.2.0\\include"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": ""
+        }
+    ],
+    "version": 4
+}

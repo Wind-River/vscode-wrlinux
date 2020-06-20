@@ -1,0 +1,168 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "WRLinux SDK GCC C Compiler",
+            "type": "shell",
+            "command": "%CC%",
+            "args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+            "options": {
+                "env" : {
+                    "SDKROOT" : "${config:wrlinuxsdk.sdkroot}",
+                    "SDKTARGETSYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "PATH" : "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\..\\${config:wrlinuxsdk.hosttriplet}\\bin;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\x86_64-wrs-linux;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\x86_64-wrs-linux-musl;%PATH%",
+                    "PKG_CONFIG_SYSROOT_DIR" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "PKG_CONFIG_PATH" : "${config:wrlinuxsdk.sdktargetsysroot}\\usr\\lib64\\pkgconfig",
+                    "CONFIG_SITE" : "${config:wrlinuxsdk.sdkroot}\\site-config-${config:wrlinuxsdk.targettriplet}",
+                    "OECORE_NATIVE_SYSROOT" : "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}",
+                    "OECORE_TARGET_SYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "OECORE_ACLOCAL_OPTS" : "-I ${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\share\\aclocal",
+                    "OECORE_BASELIB" : "lib64",
+                    "OECORE_TARGET_ARCH" : "x86_64",
+                    "OECORE_TARGET_OS" : "linux",
+                    "CC" : "x86_64-wrs-linux-gcc  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CXX" : "x86_64-wrs-linux-g++  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CPP" : "x86_64-wrs-linux-gcc -E  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "AS" : "x86_64-wrs-linux-as  ",
+                    "LD" : "x86_64-wrs-linux-ld   --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "GDB" : "x86_64-wrs-linux-gdb",
+                    "STRIP" : "x86_64-wrs-linux-strip",
+                    "RANLIB" : "x86_64-wrs-linux-ranlib",
+                    "OBJCOPY" : "x86_64-wrs-linux-objcopy",
+                    "OBJDUMP" : "x86_64-wrs-linux-objdump",
+                    "AR" : "x86_64-wrs-linux-ar",
+                    "NM" : "x86_64-wrs-linux-nm",
+                    "M4" : "m4",
+                    "TARGET_PREFIX" : "x86_64-wrs-linux-",
+                    "CONFIGURE_FLAGS" : "--target=x86_64-wrs-linux --host=x86_64-wrs-linux --build=i686-linux --with-libtool-sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CFLAGS" : " -O2 -pipe -g -feliminate-unused-debug-types ",
+                    "CXXFLAGS" : " -O2 -pipe -g -feliminate-unused-debug-types ",
+                    "LDFLAGS" : "-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed",
+                    "CPPFLAGS" : "",
+                    "KCFLAGS" : "--sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "OECORE_DISTRO_VERSION" : "10.19.45.8",
+                    "OECORE_SDK_VERSION" : "19.45",
+                    "ARCH" : "x86",
+                    "CROSS_COMPILE" : "x86_64-wrs-linux-",            
+                }
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+              "kind": "build",
+              "isDefault": true
+            }            
+        },
+        {
+            "label": "WRLinux SDK Make",
+            "type": "shell",
+            "command": "make",
+            "args": [""],
+            "options": {
+                "env" : {
+                    "SDKROOT" : "${config:wrlinuxsdk.sdkroot}",
+                    "SDKTARGETSYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "PATH" : "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\..\\${config:wrlinuxsdk.hosttriplet}\\bin;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\x86_64-wrs-linux;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\x86_64-wrs-linux-musl;%PATH%",
+                    "PKG_CONFIG_SYSROOT_DIR" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "PKG_CONFIG_PATH" : "${config:wrlinuxsdk.sdktargetsysroot}\\usr\\lib64\\pkgconfig",
+                    "CONFIG_SITE" : "${config:wrlinuxsdk.sdkroot}\\site-config-${config:wrlinuxsdk.targettriplet}",
+                    "OECORE_NATIVE_SYSROOT" : "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}",
+                    "OECORE_TARGET_SYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "OECORE_ACLOCAL_OPTS" : "-I ${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\share\\aclocal",
+                    "OECORE_BASELIB" : "lib64",
+                    "OECORE_TARGET_ARCH" : "x86_64",
+                    "OECORE_TARGET_OS" : "linux",
+                    "CC" : "x86_64-wrs-linux-gcc  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CXX" : "x86_64-wrs-linux-g++  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CPP" : "x86_64-wrs-linux-gcc -E  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "AS" : "x86_64-wrs-linux-as  ",
+                    "LD" : "x86_64-wrs-linux-ld   --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "GDB" : "x86_64-wrs-linux-gdb",
+                    "STRIP" : "x86_64-wrs-linux-strip",
+                    "RANLIB" : "x86_64-wrs-linux-ranlib",
+                    "OBJCOPY" : "x86_64-wrs-linux-objcopy",
+                    "OBJDUMP" : "x86_64-wrs-linux-objdump",
+                    "AR" : "x86_64-wrs-linux-ar",
+                    "NM" : "x86_64-wrs-linux-nm",
+                    "M4" : "m4",
+                    "TARGET_PREFIX" : "x86_64-wrs-linux-",
+                    "CONFIGURE_FLAGS" : "--target=x86_64-wrs-linux --host=x86_64-wrs-linux --build=i686-linux --with-libtool-sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CFLAGS" : " -O2 -pipe -g -feliminate-unused-debug-types ",
+                    "CXXFLAGS" : " -O2 -pipe -g -feliminate-unused-debug-types ",
+                    "LDFLAGS" : "-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed",
+                    "CPPFLAGS" : "",
+                    "KCFLAGS" : "--sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "OECORE_DISTRO_VERSION" : "10.19.45.8",
+                    "OECORE_SDK_VERSION" : "19.45",
+                    "ARCH" : "x86",
+                    "CROSS_COMPILE" : "x86_64-wrs-linux-",            
+                }
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+              "kind": "build",
+              "isDefault": true
+            }            
+        },
+        {
+            "label": "WRLinux SDK Make Target...",
+            "type": "shell",
+            "command": "make",
+            "args": ["${input:maketarget}"],
+            "options": {
+                "env" : {
+                    "SDKROOT" : "${config:wrlinuxsdk.sdkroot}",
+                    "SDKTARGETSYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "PATH" : "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\..\\${config:wrlinuxsdk.hosttriplet}\\bin;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\x86_64-wrs-linux;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\x86_64-wrs-linux-musl;%PATH%",
+                    "PKG_CONFIG_SYSROOT_DIR" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "PKG_CONFIG_PATH" : "${config:wrlinuxsdk.sdktargetsysroot}\\usr\\lib64\\pkgconfig",
+                    "CONFIG_SITE" : "${config:wrlinuxsdk.sdkroot}\\site-config-${config:wrlinuxsdk.targettriplet}",
+                    "OECORE_NATIVE_SYSROOT" : "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}",
+                    "OECORE_TARGET_SYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
+                    "OECORE_ACLOCAL_OPTS" : "-I ${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\share\\aclocal",
+                    "OECORE_BASELIB" : "lib64",
+                    "OECORE_TARGET_ARCH" : "x86_64",
+                    "OECORE_TARGET_OS" : "linux",
+                    "CC" : "x86_64-wrs-linux-gcc  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CXX" : "x86_64-wrs-linux-g++  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CPP" : "x86_64-wrs-linux-gcc -E  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "AS" : "x86_64-wrs-linux-as  ",
+                    "LD" : "x86_64-wrs-linux-ld   --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "GDB" : "x86_64-wrs-linux-gdb",
+                    "STRIP" : "x86_64-wrs-linux-strip",
+                    "RANLIB" : "x86_64-wrs-linux-ranlib",
+                    "OBJCOPY" : "x86_64-wrs-linux-objcopy",
+                    "OBJDUMP" : "x86_64-wrs-linux-objdump",
+                    "AR" : "x86_64-wrs-linux-ar",
+                    "NM" : "x86_64-wrs-linux-nm",
+                    "M4" : "m4",
+                    "TARGET_PREFIX" : "x86_64-wrs-linux-",
+                    "CONFIGURE_FLAGS" : "--target=x86_64-wrs-linux --host=x86_64-wrs-linux --build=i686-linux --with-libtool-sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "CFLAGS" : " -O2 -pipe -g -feliminate-unused-debug-types ",
+                    "CXXFLAGS" : " -O2 -pipe -g -feliminate-unused-debug-types ",
+                    "LDFLAGS" : "-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed",
+                    "CPPFLAGS" : "",
+                    "KCFLAGS" : "--sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+                    "OECORE_DISTRO_VERSION" : "10.19.45.8",
+                    "OECORE_SDK_VERSION" : "19.45",
+                    "ARCH" : "x86",
+                    "CROSS_COMPILE" : "x86_64-wrs-linux-",            
+                }
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+              "kind": "build",
+              "isDefault": true
+            }            
+        }
+    ],
+    "inputs": [
+        {
+          "id": "maketarget",
+          "type": "promptString",
+          "description": "Make target.",
+          "default": "all"
+        }
+    ]
+}

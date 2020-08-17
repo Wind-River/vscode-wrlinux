@@ -1,5 +1,5 @@
 {
-    "wrlinuxsdk.sdkroot": "C:\\Users\\rwoolley\\Projects\\vizi-ai\\wrlinuxsdk",
+    "wrlinuxsdk.sdkroot": "C:\\Users\\rwoolley\\Projects\\wrlinuxsdk",
     "wrlinuxsdk.targettriplet": "corei7-64-wrs-linux",
     "wrlinuxsdk.hosttriplet": "i686-wrlinuxsdk-mingw32",
     "wrlinuxsdk.sdktargetsysroot": "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.targettriplet}",

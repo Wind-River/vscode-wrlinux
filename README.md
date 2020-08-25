@@ -1,8 +1,8 @@
-# Yocto Project SDK Support
+# Wind River Linux for Visual Studio Code
 
 ## Overview
 
-Yocto Project SDK Support is an extension for VS Code published by Wind River.  You may install it to use SDKs on both Linux and Windows development machines.
+Wind River Linux for Visual Studio Code is an extension for Visual Studio Code published by Wind River.  You may install it to use SDKs on both Linux and Windows development machines.
 
 ## Project License
 

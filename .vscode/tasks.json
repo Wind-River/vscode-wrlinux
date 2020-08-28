@@ -42,8 +42,8 @@
                     "LDFLAGS" : "-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed",
                     "CPPFLAGS" : "",
                     "KCFLAGS" : "--sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
-                    "OECORE_DISTRO_VERSION" : "10.19.45.8",
-                    "OECORE_SDK_VERSION" : "19.45",
+                    "OECORE_DISTRO_VERSION" : "10.20.33.0",
+                    "OECORE_SDK_VERSION" : "20.33",
                     "ARCH" : "x86",
                     "CROSS_COMPILE" : "x86_64-wrs-linux-",            
                 }
@@ -93,8 +93,8 @@
                     "LDFLAGS" : "-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed",
                     "CPPFLAGS" : "",
                     "KCFLAGS" : "--sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
-                    "OECORE_DISTRO_VERSION" : "10.19.45.8",
-                    "OECORE_SDK_VERSION" : "19.45",
+                    "OECORE_DISTRO_VERSION" : "10.20.33.0",
+                    "OECORE_SDK_VERSION" : "20.33",
                     "ARCH" : "x86",
                     "CROSS_COMPILE" : "x86_64-wrs-linux-",            
                 }
@@ -144,8 +144,8 @@
                     "LDFLAGS" : "-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed",
                     "CPPFLAGS" : "",
                     "KCFLAGS" : "--sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
-                    "OECORE_DISTRO_VERSION" : "10.19.45.8",
-                    "OECORE_SDK_VERSION" : "19.45",
+                    "OECORE_DISTRO_VERSION" : "10.20.33.0",
+                    "OECORE_SDK_VERSION" : "20.33",
                     "ARCH" : "x86",
                     "CROSS_COMPILE" : "x86_64-wrs-linux-",            
                 }

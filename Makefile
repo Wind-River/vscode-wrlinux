@@ -19,10 +19,22 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+SOURCES=hello.c
+
+OBJECTS=$(SOURCES:.c=.o)
+
+PROGRAM=hello
+
+.PHONY: all
+
 all: hello
 
 clean:
-	$(RM) hello
+	$(RM) $(PROGRAM)
+	$(RM) $(OBJECTS)
 
-hello:
-	$(CC) hello.c -o hello
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(PROGRAM): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@

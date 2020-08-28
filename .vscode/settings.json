@@ -1,8 +1,8 @@
 {
-    "wrlinuxsdk.sdkroot": "C:\\Users\\rwoolley\\Projects\\wrlinuxsdk",
+    "wrlinuxsdk.sdkroot": "/home/rcwoolley/Projects/wrlinuxcd/sdk/intel_x86_64/20.33",
     "wrlinuxsdk.targettriplet": "corei7-64-wrs-linux",
-    "wrlinuxsdk.hosttriplet": "i686-wrlinuxsdk-mingw32",
-    "wrlinuxsdk.sdktargetsysroot": "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.targettriplet}",
+    "wrlinuxsdk.hosttriplet": "x86_64-wrlinuxsdk-linux",
+    "wrlinuxsdk.sdktargetsysroot": "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.targettriplet}",
 
     "files.associations": {
         "cstdio": "c"

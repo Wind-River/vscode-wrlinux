@@ -1,16 +1,17 @@
 {
     "env": {
-        "sdkroot": "${config:wrlinuxsdk.sdkroot}", 
-        "targettriplet": "${config:wrlinuxsdk.targettriplet}",
-        "hosttriplet": "${config:wrlinuxsdk.hosttriplet}"
+        "NOTE": "This is a temporary workaround for vscode-cpptools issue 6307",
+        "sdkroot": "/home/rcwoolley/Projects/wrlinuxcd/sdk/intel_x86_64/20.33",
+        "targettriplet": "corei7-64-wrs-linux",
+        "hosttriplet": "x86_64-wrlinuxsdk-linux"
     },
     "configurations": [
         {
             "name": "WRLinux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${sdkroot}\\sysroots\\${targettriplet}\\usr\\include",
-                "${sdkroot}\\sysroots\\${hosttriplet}\\usr\\lib\\x86_64-wrs-linux\\gcc\\x86_64-wrs-linux\\9.2.0\\include"
+                "${env.sdkroot}/sysroots/${env.targettriplet}/usr/include",
+                "${env.sdkroot}/sysroots/${env.hosttriplet}/usr/lib/x86_64-wrs-linux/gcc/x86_64-wrs-linux/10.1.0/include"
             ],
             "defines": [
                 "__linux__",
@@ -20,8 +21,8 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}",
-                    "${sdkroot}\\sysroots\\${targettriplet}\\usr\\include",
-                    "${sdkroot}\\sysroots\\${hosttriplet}\\usr\\lib\\x86_64-wrs-linux\\gcc\\x86_64-wrs-linux\\9.2.0\\include"
+                    "${config:wrlinuxsdk.sdkroot}/sysroots/${targettriplet}/usr/include",
+                    "${config:wrlinuxsdk.sdkroot}/sysroots/${hosttriplet}/usr/lib/x86_64-wrs-linux/gcc/x86_64-wrs-linux/10.1.0/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

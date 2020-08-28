@@ -1,6 +1,7 @@
 {
     "wrlinuxsdk.sdkroot": "/home/rcwoolley/Projects/wrlinuxcd/sdk/intel_x86_64/20.33",
     "wrlinuxsdk.targettriplet": "corei7-64-wrs-linux",
+    "wrlinuxsdk.targetarchtriplet": "x86_64-wrs-linux",
     "wrlinuxsdk.hosttriplet": "x86_64-wrlinuxsdk-linux",
     "wrlinuxsdk.sdktargetsysroot": "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.targettriplet}",
 

@@ -12,7 +12,7 @@
                 "env" : {
                     "SDKROOT" : "${config:wrlinuxsdk.sdkroot}",
                     "SDKTARGETSYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
-                    "PATH" : "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/../${config:wrlinuxsdk.hosttriplet}/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/x86_64-wrs-linux:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/x86_64-wrs-linux-musl:${env:PATH}",
+                    "PATH" : "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/../${config:wrlinuxsdk.hosttriplet}/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/${config:wrlinuxsdk.targetarchtriplet}:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/${config:wrlinuxsdk.targetarchtriplet}-musl:${env:PATH}",
                     "PKG_CONFIG_SYSROOT_DIR" : "${config:wrlinuxsdk.sdktargetsysroot}",
                     "PKG_CONFIG_PATH" : "${config:wrlinuxsdk.sdktargetsysroot}/usr/lib64/pkgconfig",
                     "CONFIG_SITE" : "${config:wrlinuxsdk.sdkroot}/site-config-${config:wrlinuxsdk.targettriplet}",
@@ -63,7 +63,7 @@
                 "env" : {
                     "SDKROOT" : "${config:wrlinuxsdk.sdkroot}",
                     "SDKTARGETSYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
-                    "PATH" : "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/../${config:wrlinuxsdk.hosttriplet}/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/x86_64-wrs-linux:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/x86_64-wrs-linux-musl:${env:PATH}",
+                    "PATH" : "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/../${config:wrlinuxsdk.hosttriplet}/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/${config:wrlinuxsdk.targetarchtriplet}:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/${config:wrlinuxsdk.targetarchtriplet}-musl:${env:PATH}",
                     "PKG_CONFIG_SYSROOT_DIR" : "${config:wrlinuxsdk.sdktargetsysroot}",
                     "PKG_CONFIG_PATH" : "${config:wrlinuxsdk.sdktargetsysroot}/usr/lib64/pkgconfig",
                     "CONFIG_SITE" : "${config:wrlinuxsdk.sdkroot}/site-config-${config:wrlinuxsdk.targettriplet}",
@@ -114,7 +114,7 @@
                 "env" : {
                     "SDKROOT" : "${config:wrlinuxsdk.sdkroot}",
                     "SDKTARGETSYSROOT" : "${config:wrlinuxsdk.sdktargetsysroot}",
-                    "PATH" : "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/../${config:wrlinuxsdk.hosttriplet}/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/x86_64-wrs-linux:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/x86_64-wrs-linux-musl:${env:PATH}",
+                    "PATH" : "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/../${config:wrlinuxsdk.hosttriplet}/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/${config:wrlinuxsdk.targetarchtriplet}:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/${config:wrlinuxsdk.targetarchtriplet}-musl:${env:PATH}",
                     "PKG_CONFIG_SYSROOT_DIR" : "${config:wrlinuxsdk.sdktargetsysroot}",
                     "PKG_CONFIG_PATH" : "${config:wrlinuxsdk.sdktargetsysroot}/usr/lib64/pkgconfig",
                     "CONFIG_SITE" : "${config:wrlinuxsdk.sdkroot}/site-config-${config:wrlinuxsdk.targettriplet}",

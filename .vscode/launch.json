@@ -2,27 +2,52 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // For more information on gdb with QEMU, visit: https://wiki.osdev.org/User:TheCool1Kevin/VSCode_Debug#Setting_up_tasks.json
     "version": "0.2.0",
     "configurations": [
         {
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/hello",
             "args": [],
-            "stopAtEntry": false,
+            "targetArchitecture": "arm64",
+            "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "/path/to/gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "miDebuggerArgs": "",
+            "customLaunchSetupCommands": [
+                {
+                    "description": "Connect to QEMU remote debugger",
+                    "text": "target extended-remote localhost:1234"
+                },
+                {
+                    "description": "Upload the application",
+                    "text": "remote put hello hello"
+                },
+                {
+                    "description": "Set the file to execute",
+                    "text": "set remote exec-file hello"
+                },
+                {
+                    "description": "Read the symbols locally",
+                    "text": "file hello"
+                },
+                {
+                    "description": "Set a breakpoint on main",
+                    "text": "b main"
+                }
+            ],
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
                     "text": "-enable-pretty-printing",
                     "ignoreFailures": true
                 }
-            ]
+            ],
         }
     ]
 }

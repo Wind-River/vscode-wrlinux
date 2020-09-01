@@ -60,8 +60,16 @@
             "label": "WRLinux SDK GCC C Compiler",
             "type": "shell",
             "command": "$CC",
-            "args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
-            "problemMatcher": ["$gcc"],
+            "args": [
+                "-g",
+                "${CFLAGS}",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
               "kind": "build",
               "isDefault": true

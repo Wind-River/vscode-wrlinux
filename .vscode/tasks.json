@@ -109,6 +109,7 @@
             "label": "Launch QEMU",
             "type": "shell",
             "windows": {
+                // Not tested
                 "command": "start -FilePath 'qemu-system-aarch64' -ArgumentList '-S -gdb tcp::1234 -boot d -cdrom bin/myos.iso -m 512'"
             },
             "linux": {

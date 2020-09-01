@@ -25,13 +25,15 @@ OBJECTS=$(SOURCES:.c=.o)
 
 PROGRAM=hello
 
-.PHONY: all
+.PHONY: all clean rebuild
 
 all: hello
 
 clean:
 	$(RM) $(PROGRAM)
 	$(RM) $(OBJECTS)
+
+rebuild: clean all
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

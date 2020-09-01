@@ -2,10 +2,10 @@
     "wrlinuxsdk.distroversion": "10.20.33.0",
     "wrlinuxsdk.sdkversion": "20.33",
     "wrlinuxsdk.gccversion": "10.1.0",
-    "wrlinuxsdk.targettriplet": "corei7-64-wrs-linux",
-    "wrlinuxsdk.targetarchtriplet": "x86_64-wrs-linux",
+    "wrlinuxsdk.targettriplet": "cortexa72-wrs-linux",
+    "wrlinuxsdk.targetarchtriplet": "aarch64-wrs-linux",
     "wrlinuxsdk.hosttriplet": "x86_64-wrlinuxsdk-linux",
-    "wrlinuxsdk.sdkroot": "/home/rcwoolley/Projects/wrlinuxcd/sdk/intel_x86_64/20.33",
+    "wrlinuxsdk.sdkroot": "/home/rcwoolley/Projects/wrlinuxcd/sdk/bcm_2xxx_rpi4/20.33",
     "wrlinuxsdk.sdktargetsysroot": "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.targettriplet}",
 
     "files.associations": {

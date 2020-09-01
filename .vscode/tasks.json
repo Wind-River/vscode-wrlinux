@@ -71,9 +71,9 @@
                 "$gcc"
             ],
             "group": {
-              "kind": "build",
-              "isDefault": true
-            }            
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "WRLinux SDK Make",
@@ -86,9 +86,9 @@
                 "$gcc"
             ],
             "group": {
-              "kind": "build",
-              "isDefault": true
-            }            
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "WRLinux SDK Make Target...",

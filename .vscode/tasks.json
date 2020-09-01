@@ -44,6 +44,19 @@
     },
     "tasks": [
         {
+            "label": "Print Environment Variables",
+            "type": "shell",
+            "command": "printenv",
+            "args": [
+            ],
+            "problemMatcher": [
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
             "label": "WRLinux SDK GCC C Compiler",
             "type": "shell",
             "command": "$CC",

@@ -79,8 +79,12 @@
             "label": "WRLinux SDK Make",
             "type": "shell",
             "command": "make",
-            "args": [""],
-            "problemMatcher": ["$gcc"],
+            "args": [
+                ""
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
               "kind": "build",
               "isDefault": true
@@ -90,8 +94,12 @@
             "label": "WRLinux SDK Make Target...",
             "type": "shell",
             "command": "make",
-            "args": ["${input:maketarget}"],
-            "problemMatcher": ["$gcc"],
+            "args": [
+                "${input:maketarget}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "group": {
               "kind": "build",
               "isDefault": true

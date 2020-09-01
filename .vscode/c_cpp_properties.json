@@ -6,8 +6,8 @@
         "gccversion": "10.1.0",
         "hosttriplet": "x86_64-wrlinuxsdk-linux",
         "targettriplet": "corei7-64-wrs-linux",
-        "targetarchtriplet": "x86_64-wrs-linux"
-        "sdkroot": "/home/rcwoolley/Projects/wrlinuxcd/sdk/intel_x86_64/20.33"
+        "targetarchtriplet": "x86_64-wrs-linux",
+        "sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/intel-x86-64"
     },
     "configurations": [
         {

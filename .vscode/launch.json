@@ -11,7 +11,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/hello",
             "args": [],
-            "targetArchitecture": "arm64",
+            "targetArchitecture": "x86_64",
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],

@@ -113,8 +113,7 @@
                 "command": "start -FilePath 'qemu-system-aarch64' -ArgumentList '-S -gdb tcp::1234 -boot d -cdrom bin/myos.iso -m 512'"
             },
             "linux": {
-                "command": "qemu-system-aarch64 -machine virt -cpu cortex-a57 -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::1234-:1234 -m 512 -bios /home/rcwoolley/Projects/wrlinuxcd/target-full-bcm-2xxx-rpi4/qemu-u-boot-bcm-2xxx-rpi4.bin -nographic -drive id=disk0,file=/home/rcwoolley/Projects/wrlinuxcd/bcm-2xxx-rpi4.img,if=none,format=raw -device virtio-blk-device,drive=disk0"
-            }
+                "command": "qemu-system-aarch64 -machine virt -cpu cortex-a57 -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::1234-:1234 -m 512 -bios ${workspaceFolder}/qemu-u-boot-bcm-2xxx-rpi4.bin -nographic -drive id=disk0,file=${workspaceFolder}/bcm-2xxx-rpi4.img,if=none,format=raw -device virtio-blk-device,drive=disk0"
         }
     ],
     "inputs": [

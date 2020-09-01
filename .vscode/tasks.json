@@ -113,7 +113,7 @@
                 "command": "start -FilePath 'qemu-system-x86_64' -ArgumentList '-S -gdb tcp::1234 -boot d -cdrom wrlinux.iso -m 512'"
             },
             "linux": {
-                "command": "qemu-system-x86_64 -net nic -net user -m 512 -drive if=none,id=hd,file=${workspaceFolder}/boot-image-qemu.hddimg,format=raw -device virtio-scsi-pci,id=scsi -device scsi-hd,drive=hd -cpu kvm64 -enable-kvm -drive if=pflash,format=qcow2,file=ovmf.qcow2"
+                "command": "qemu-system-x86_64 -device virtio-net,netdev=net0 -netdev user,id=net0,hostfwd=tcp::1234-:1234 -m 512 -drive if=none,id=hd,file=${workspaceFolder}/boot-image-qemu.hddimg,format=raw -device virtio-scsi-pci,id=scsi -device scsi-hd,drive=hd -cpu kvm64 -enable-kvm -nographic -drive if=pflash,format=qcow2,file=ovmf.qcow2"
             },
             "problemMatcher": []
         }

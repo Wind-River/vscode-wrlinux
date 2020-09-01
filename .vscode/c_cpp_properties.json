@@ -7,7 +7,7 @@
         "hosttriplet": "x86_64-wrlinuxsdk-linux",
         "targettriplet": "cortexa72-wrs-linux",
         "targetarchtriplet": "aarch64-wrs-linux",
-        "sdkroot": "/home/rcwoolley/Projects/wrlinuxcd/sdk/bcm_2xxx_rpi4/20.33"
+        "sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/bcm-2xxx-rpi4"
     },
     "configurations": [
         {

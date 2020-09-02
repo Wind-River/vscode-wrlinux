@@ -72,16 +72,17 @@ We now shall clone an example project and configure it to use the SDK.
 
    We must also set the sdkroot in the c_cpp_properties.json to allow IntelliSense code completion to work.   This is a temporary workaround for vscode-cpptools issue #6307.
 
-9. Double-click c_cpp_properties.json to edit the file.
+9. Save the file by choosing *File > Save* from the menu or by using the CTRL+S shortcut.
 
-10. In the JSON, set the sdkroot variable to the installation path of the SDK
+10. Double-click c_cpp_properties.json to edit the file.
 
+11. In the JSON, set the sdkroot variable to the installation path of the SDK
 
     ```
     "sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/intel-x86-64"
     ```
 
-11. Save the file by choosing *File > Save* from the menu or by using the CTRL+S shortcut.
+12. Save the file.
 
 ## Build hello.c
 

@@ -94,6 +94,9 @@ You may now build the hello.c example.
 2. In the dialog that appears choose "WRLinux SDK Make" to run the make using the SDK
 ![Build Tasks](./resources/buildtasks.png)
 
+   The make task will be executed and its output will be shown in the Terminal:
+   ![Make](./resources/make.png)
+
 An executable file named *hello* should now appear in the project explorer.
 
 ## Launch QEMU

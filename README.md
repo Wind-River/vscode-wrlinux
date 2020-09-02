@@ -66,19 +66,20 @@ We now shall clone an example project and configure it to use the SDK.
 
 8. In the settings.json file, set the wrlinuxsdk.sdkroot variable to the installation path of the SDK.
 
-```
-"wrlinuxsdk.sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/intel-x86-64",
-```
+   ```
+   "wrlinuxsdk.sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/intel-x86-64",
+   ```
 
-We must also set the sdkroot in the c_cpp_properties.json to allow IntelliSense code completion to work.   This is a temporary workaround for vscode-cpptools issue #6307.
+   We must also set the sdkroot in the c_cpp_properties.json to allow IntelliSense code completion to work.   This is a temporary workaround for vscode-cpptools issue #6307.
 
 9. Double-click c_cpp_properties.json to edit the file.
 
 10. In the JSON, set the sdkroot variable to the installation path of the SDK
 
-```
-"sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/intel-x86-64"
-```
+
+    ```
+    "sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/intel-x86-64"
+    ```
 
 11. Save the file by choosing *File > Save* from the menu or by using the CTRL+S shortcut.
 
@@ -97,23 +98,23 @@ An executable file named *hello* should now appear in the project explorer.
 ## Launch QEMU
 
 1. From the integrated Terminal go to the vscode-wrlinux project directory.
-```
-cd /home/rcwoolley/wrlinuxcd/vscode-wrlinux
-```
+   ```
+   cd /home/rcwoolley/wrlinuxcd/vscode-wrlinux
+   ```
 
 2. Execute the following command to create a raw hard disk image:
 
-```
-qemu-img create -f raw boot-image-qemu.hddimg 8G
-```
+   ```
+   qemu-img create -f raw boot-image-qemu.hddimg 8G
+   ```
 3. Write the compressed filesystem image from the Target System Image Full to your new hard disk image:
-```
-zcat /home/rcwoolley/Downloads/target-full-intel-x86-64/wrlinux-image-full-intel-x86-64.ustart.img.gz | dd of=boot-image-qemu.hddimg conv=notrunc
-```
+   ```
+   zcat /home/rcwoolley/Downloads/target-full-intel-x86-64/  wrlinux-image-full-intel-x86-64.ustart.img.gz | dd of=boot-image-qemu.hddimg conv=notrunc
+   ```
 4. Copy the OVMF qcow2 image file from the Target System Image Full to your project directory 
-```
-cp /home/rcwoolley/wrlinux/cd/target-full-intel-x86-64/ovmf.qcow2 .
-```
+   ```
+   cp /home/rcwoolley/wrlinux/cd/target-full-intel-x86-64/ovmf.qcow2 .
+   ```
 
 5. To launch qemu, choose *Terminal > Run Task* from the menu.
 
@@ -126,37 +127,37 @@ cp /home/rcwoolley/wrlinux/cd/target-full-intel-x86-64/ovmf.qcow2 .
 
 1. You should see a regular Linux boot sequence in the Terminal.  Wait until a login prompt appears:
 
-```
-Wind River Linux development 20.33 intel-x86-64 ttys0
+   ```
+   Wind River Linux development 20.33 intel-x86-64 ttyS0
 
-intel-x86-64 login:
-```
+   intel-x86-64 login:
+   ```
 
 2. Enter *root* as the username and press enter.
 
 3. Enter *root* as the password and press enter.
 
 4. Run the following command to unlock ostree
-```
-ostree admin unlock --hotfix
-```
+   ```
+   ostree admin unlock --hotfix
+   ```
 
 5. Update the system with newer packages from distro.windriver.com
-```
-dnf update
-```
+   ```
+   dnf update
+   ```
 
 6. Install gdbserver
-```
-dnf install -y gdbserver
-```
+   ```
+   dnf install -y gdbserver
+   ```
 
 ## Debug an application
 
 1. Run gdbserver with the following command:
-```
-gdbserver --multi localhost:1234
-```
+   ```
+   gdbserver --multi localhost:1234
+   ```
 
 2. Wait until you see the message: *Listening on port 1234*
 
@@ -166,23 +167,23 @@ gdbserver --multi localhost:1234
 
 5. Click on the green triangle to launch the debugger.
 
-  VSCode will launch GDB and run a series of commands to upload the *hello* executable.  A floating, horizontal toolbar will appear along the top center of the screen.  The debugger is stopped at the entrypoint to the *hello* application.
+   VSCode will launch GDB and run a series of commands to upload the *hello* executable.  A floating, horizontal toolbar will appear along the top center of the screen.  The debugger is stopped at the entrypoint to the *hello* application.
 
 6. Click the green triangle on the toolbar to continue to execute the application.
 
 7. In the Terminal view, click the drop-down menu on the right side to choose *Task - Launch QEMU*
 
 8. Observe *Hello World!* mixed with the output from gdbserver.
-```
-Listening on port 1234
-Remote debugging from host ::ffff:10.0.2.2, port 43400
-Process /var/rootdirs/root/hello created; pid = 380
-Hello World!
+   ```
+   Listening on port 1234
+   Remote debugging from host ::ffff:10.0.2.2, port 43400
+   Process /var/rootdirs/root/hello created; pid = 380
+   Hello World!
 
-Child exited with status 0
-Remote side has terminated connection.  GDBserver will reopen the connection.
-Listening on port 1234
-```
+   Child exited with status 0
+   Remote side has terminated connection.  GDBserver will reopen the connection.
+   Listening on port 1234
+   ```
 
 ## Project License
 

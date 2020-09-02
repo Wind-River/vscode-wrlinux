@@ -43,17 +43,21 @@ Extracting SDK..............
 
 We now shall clone an example project and configure it to use the SDK.
 
-1. In Visual Studio Code, use CTRL+SHIFT+P to open the command bar. 
-![VSCode command bar](./resources/commandbar.png)
+1. In Visual Studio Code, use CTRL+SHIFT+P to open the command bar.
+
+   ![VSCode command bar](./resources/commandbar.png)
 
 2. Type *Git: Clone* and press enter.
-![VSCode Git: Clone](./resources/gitclone.png)
+
+   ![VSCode Git: Clone](./resources/gitclone.png)
 
 3. Select *Clone from GitHub* and press enter.
-![VSCode Clone from GitHub](./resources/clonefromgithub.png)
+
+   ![VSCode Clone from GitHub](./resources/clonefromgithub.png)
 
 4. For the repository type:
    Wind-River/vscode-wrlinux
+
    ![GitHub Repo](./resources/githubrepo.png)
 
 5. For the destination directory enter: /home/rcwoolley/wrlinuxcd/
@@ -89,12 +93,15 @@ We now shall clone an example project and configure it to use the SDK.
 You may now build the hello.c example.  
 
 1. From the menu click on *Terminal > Run Build Task* or use the CTRL+SHIFT+B short cut.
-![Run Build Task](./resources/runbuildtask.png)
+
+   ![Run Build Task](./resources/runbuildtask.png)
 
 2. In the dialog that appears choose "WRLinux SDK Make" to run the make using the SDK
-![Build Tasks](./resources/buildtasks.png)
+
+   ![Build Tasks](./resources/buildtasks.png)
 
    The make task will be executed and its output will be shown in the Terminal:
+
    ![Make](./resources/make.png)
 
 An executable file named *hello* should now appear in the project explorer.
@@ -125,7 +132,12 @@ An executable file named *hello* should now appear in the project explorer.
    ![Run Task](./resources/runtask.png)
 
 6. In the dialog choose *Launch QEMU*
+
    ![Select Build Task](./resources/selecttask.png)
+
+The integrated terminal should now show the output of QEMU.  It will proceed with the boot sequence starting with the U-Boot bootloader.
+
+![U-Boot](./resources/uboot.png)
 
 ## Add gdbserver
 
@@ -163,17 +175,29 @@ An executable file named *hello* should now appear in the project explorer.
    gdbserver --multi localhost:1234
    ```
 
-2. Wait until you see the message: *Listening on port 1234*
+2. Wait until you see the message:
+   ```
+   Listening on port 1234
+   ```
 
 3. Switch to the debug mode by clicking on the icon of the bug on the play button on the vertical toolbar on the left-hand side (or use CTRL+SHIFT+D)
 
+   ![Run](./resources/runicon.png)
+
 4. Look for the green triangle in the top-right corner.  Choose *(gdb) Launch)* from the drop-down menu next to the green triangle.
+
+   ![Start Debugging](./resources/startdebugging.png)
 
 5. Click on the green triangle to launch the debugger.
 
-   VSCode will launch GDB and run a series of commands to upload the *hello* executable.  A floating, horizontal toolbar will appear along the top center of the screen.  The debugger is stopped at the entrypoint to the *hello* application.
+   VSCode will launch GDB and run a series of commands to upload the *hello* executable.  The debugger will stop on the breakpoint placed on main.  Since the first line in main is a call to printf, the source code for stdio2.h is displayed in the editor.
 
-6. Click the green triangle on the toolbar to continue to execute the application.
+   ![Debug View](./resources/debugview.png)
+
+6. Click the first icon on the debug tool to continue to execute the application.
+
+   ![Debug taskbar](./resources/debugtaskbar.png)
+
 
 7. In the Terminal view, click the drop-down menu on the right side to choose *Task - Launch QEMU*
 
@@ -187,6 +211,11 @@ An executable file named *hello* should now appear in the project explorer.
    Child exited with status 0
    Remote side has terminated connection.  GDBserver will reopen the connection.
    Listening on port 1234
+   ```
+
+9. (OPTIONAL) To terminate the gdbserver from outside QEMU, you may issue the following command:
+   ```
+   gdb -ex 'target extended-remote localhost:1234' -ex 'monitor exit' -ex 'quit' -ex 'quit'
    ```
 
 ## Project License

@@ -44,18 +44,19 @@ Extracting SDK..............
 We now shall clone an example project and configure it to use the SDK.
 
 1. In Visual Studio Code, use CTRL+SHIFT+P to open the command bar. 
+![VSCode command bar](./resources/commandbar.png)
 
 2. Type *Git: Clone* and press enter.
+![VSCode Git: Clone](./resources/gitclone.png)
 
 3. Select *Clone from GitHub* and press enter.
+![VSCode Clone from GitHub](./resources/clonefromgithub.png)
 
 4. For the repository type:
-
    Wind-River/vscode-wrlinux
+   ![GitHub Repo](./resources/githubrepo.png)
 
-5. For the destination directory enter:
-
-   /home/rcwoolley/wrlinuxcd/
+5. For the destination directory enter: /home/rcwoolley/wrlinuxcd/
 
    A subdirectory vscode-wrlinux will be created under the destination directory you enter.
 
@@ -86,8 +87,10 @@ We must also set the sdkroot in the c_cpp_properties.json to allow IntelliSense 
 You may now build the hello.c example.  
 
 1. From the menu click on *Terminal > Run Build Task* or use the CTRL+SHIFT+B short cut.
+![Run Build Task](./resources/runbuildtask.png)
 
 2. In the dialog that appears choose "WRLinux SDK Make" to run the make using the SDK
+![Build Tasks](./resources/buildtasks.png)
 
 An executable file named *hello* should now appear in the project explorer.
 
@@ -114,7 +117,10 @@ cp /home/rcwoolley/wrlinux/cd/target-full-bcm-2xxx-rpi4/qemu-u-boot-bcm-2xxx-rpi
 
 5. To launch qemu, choose *Terminal > Run Task* from the menu.
 
+   ![Run Task](./resources/runtask.png)
+
 6. In the dialog choose *Launch QEMU*
+   ![Select Build Task](./resources/selecttask.png)
 
 ## Add gdbserver
 

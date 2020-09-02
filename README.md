@@ -2,7 +2,7 @@
 
 ## Overview
 
-Wind River Linux for Visual Studio Code is an extension for Visual Studio Code published by Wind River.  You may install it to use Software Develop Kits (SDKs) on both Linux and Windows development machines.
+Wind River Linux for Visual Studio Code is a project for Visual Studio Code published by Wind River.  You may extend it to use Software Development Kits (SDKs) on both Linux and Windows development machines.
 
 These instructions are for a Raspberry Pir 4 image based on the bcm-2xxx-rpi4 support package.  For instructions on how to use the SDK with the Raspberry Pi 4, please refer to the *master* branch.
 

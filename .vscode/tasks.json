@@ -16,21 +16,21 @@
             "OECORE_BASELIB": "lib",
             "OECORE_TARGET_ARCH": "x86_64",
             "OECORE_TARGET_OS": "linux",
-            "CC": "x86_64-wrs-linux-gcc  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
-            "CXX": "x86_64-wrs-linux-g++  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
-            "CPP": "x86_64-wrs-linux-gcc -E  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
-            "AS": "x86_64-wrs-linux-as  ",
-            "LD": "x86_64-wrs-linux-ld   --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
-            "GDB": "x86_64-wrs-linux-gdb",
-            "STRIP": "x86_64-wrs-linux-strip",
-            "RANLIB": "x86_64-wrs-linux-ranlib",
-            "OBJCOPY": "x86_64-wrs-linux-objcopy",
-            "OBJDUMP": "x86_64-wrs-linux-objdump",
-            "AR": "x86_64-wrs-linux-ar",
-            "NM": "x86_64-wrs-linux-nm",
+            "CC": "x86_64-poky-linux-gcc  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+            "CXX": "x86_64-poky-linux-g++  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+            "CPP": "x86_64-poky-linux-gcc -E  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+            "AS": "x86_64-poky-linux-as  ",
+            "LD": "x86_64-poky-linux-ld   --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+            "GDB": "x86_64-poky-linux-gdb",
+            "STRIP": "x86_64-poky-linux-strip",
+            "RANLIB": "x86_64-poky-linux-ranlib",
+            "OBJCOPY": "x86_64-poky-linux-objcopy",
+            "OBJDUMP": "x86_64-poky-linux-objdump",
+            "AR": "x86_64-poky-linux-ar",
+            "NM": "x86_64-poky-linux-nm",
             "M4": "m4",
-            "TARGET_PREFIX": "x86_64-wrs-linux-",
-            "CONFIGURE_FLAGS": "--target=x86_64-wrs-linux --host=x86_64-wrs-linux --build=x86_64-linux --with-libtool-sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+            "TARGET_PREFIX": "x86_64-poky-linux-",
+            "CONFIGURE_FLAGS": "--target=x86_64-poky-linux --host=x86_64-poky-linux --build=x86_64-linux --with-libtool-sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
             "CFLAGS": " -O2 -pipe -g -feliminate-unused-debug-types ",
             "CXXFLAGS": " -O2 -pipe -g -feliminate-unused-debug-types ",
             "LDFLAGS": "-Wl,-O1 -Wl,--hash-style=gnu -Wl,--as-needed -Wl,-z,relro,-z,now",
@@ -39,7 +39,7 @@
             "OECORE_DISTRO_VERSION": "${config:wrlinuxsdk.distroversion}",
             "OECORE_SDK_VERSION": "${wrlinuxsdk.sdkversion}",
             "ARCH": "x86",
-            "CROSS_COMPILE": "x86_64-wrs-linux-"
+            "CROSS_COMPILE": "x86_64-poky-linux-"
         }
     },
     "tasks": [
@@ -113,9 +113,10 @@
                 "command": "start -FilePath 'qemu-system-x86_64' -ArgumentList '-S -gdb tcp::1234 -boot d -cdrom wrlinux.iso -m 512'"
             },
             "linux": {
-                "command": "qemu-system-x86_64 -device virtio-net,netdev=net0 -netdev user,id=net0,hostfwd=tcp::1234-:1234 -m 512 -drive if=none,id=hd,file=${workspaceFolder}/boot-image-qemu.hddimg,format=raw -device virtio-scsi-pci,id=scsi -device scsi-hd,drive=hd -cpu kvm64 -enable-kvm -nographic -drive if=pflash,format=qcow2,file=ovmf.qcow2"
+                "command": "qemu-system-x86_64 -device virtio-net-pci,netdev=net0,mac=52:54:00:12:35:02 -netdev user,id=net0,hostfwd=tcp::2222-:22,hostfwd=tcp::2323-:23,hostfwd=tcp::1234-:1234 -drive file=/ala-lpggp21/amann/poky/build/tmp/deploy/images/qemux86-64/core-image-base-qemux86-64-20201021213053.rootfs.ext4,if=virtio,format=raw -nographic -cpu core2duo -m 512 -serial mon:stdio -serial null -kernel /ala-lpggp21/amann/poky/build/tmp/deploy/images/qemux86-64/bzImage--5.4.50+git0+416566e1f0_94667198aa-r0-qemux86-64-20201012224756.bin -append \"root=/dev/vda rw console=ttyS0 console=ttyS0 mem=512M ip=dhcp\""
             },
             "problemMatcher": []
+
         }
     ],
     "inputs": [

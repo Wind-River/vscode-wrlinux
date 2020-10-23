@@ -7,7 +7,7 @@
         "hosttriplet": "x86_64-wrlinuxsdk-linux",
         "targettriplet": "corei7-64-wrs-linux",
         "targetarchtriplet": "x86_64-wrs-linux",
-        "sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/intel-x86-64"
+        "sdkroot": "/ala-lpggp21/amann/vscode-wrlinux/sdk/intel-x86-64"
     },
     "configurations": [
         {

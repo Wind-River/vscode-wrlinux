@@ -5,6 +5,7 @@
     // For more information on gdb with QEMU, visit: https://wiki.osdev.org/User:TheCool1Kevin/VSCode_Debug#Setting_up_tasks.json
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "(gdb) Launch",
             "type": "cppdbg",
@@ -48,6 +49,16 @@
                     "ignoreFailures": true
                 }
             ],
+        },
+        {
+            "type": "gdb",
+            "request": "attach",
+            "name": "Attach to QEMU",
+            "executable": "${workspaceFolder}/hello",
+            "target": "localhost:1234",
+            "remote": true,
+            "cwd": "${workspaceRoot}", 
+            "gdbpath": "/usr/bin/gdb"
         }
     ]
 }

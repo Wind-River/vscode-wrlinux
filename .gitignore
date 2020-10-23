@@ -1,0 +1,7 @@
+sdk
+boot-image-qemu.hddimg
+ovmf.qcow2
+sdk-intel-x86-64
+target-full-intel-x86-64
+hello
+hello.o

@@ -7,12 +7,13 @@
     "configurations": [
 
         {
+            "logging": { "engineLogging": true },
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/hello",
             "args": [],
-            "targetArchitecture": "x86_64",
+            "targetArchitecture": "arm64",
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}",
             "environment": [],

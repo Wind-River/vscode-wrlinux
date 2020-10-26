@@ -4,10 +4,10 @@
         "distroversion": "10.20.33.0",
         "sdkversion": "20.33",
         "gccversion": "10.1.0",
-        "hosttriplet": "x86_64-wrlinuxsdk-linux",
-        "targettriplet": "corei7-64-wrs-linux",
-        "targetarchtriplet": "x86_64-wrs-linux",
-        "sdkroot": "/ala-lpggp21/amann/vscode-wrlinux/sdk/intel-x86-64"
+        "hosttriplet": "x86_64-pokysdk-linux",
+        "targettriplet": "core2-64-poky-linux",
+        "targetarchtriplet": "x86_64-poky-linux",
+        "sdkroot": "/ala-lpggp21/amann/poky/build/tmp/deploy/sdk/poky/3.1.2"
     },
     "configurations": [
         {

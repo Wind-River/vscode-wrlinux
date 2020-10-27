@@ -16,7 +16,7 @@
             "OECORE_BASELIB": "lib",
             "OECORE_TARGET_ARCH": "aarch64",
             "OECORE_TARGET_OS": "linux",
-            "CC": "aarch64-poky-linux-gcc  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
+            "CC": "aarch64-poky-linux-gcc   -march=armv8-a -mtune=generic  -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
             "CXX": "aarch64-poky-linux-g++  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
             "CPP": "aarch64-poky-linux-gcc -E  -m64 -march=nehalem -mtune=generic -mfpmath=sse -msse4.2 -fstack-protector-strong  -D_FORTIFY_SOURCE=2 -Wformat -Wformat-security -Werror=format-security --sysroot=${config:wrlinuxsdk.sdktargetsysroot}",
             "AS": "aarch64-poky-linux-as  ",

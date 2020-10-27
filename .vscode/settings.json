@@ -3,7 +3,7 @@
     "wrlinuxsdk.sdkversion": "20.33",
     "wrlinuxsdk.gccversion": "10.1.0",
     "wrlinuxsdk.targettriplet": "aarch64-poky-linux",
-    "wrlinuxsdk.targetarchtriplet": "x86_64-poky-linux",
+    "wrlinuxsdk.targetarchtriplet": "aarch64-poky-linux",
     "wrlinuxsdk.hosttriplet": "x86_64-pokysdk-linux",
     "wrlinuxsdk.sdkroot": "/ala-lpggp21/amann/vscode-wrlinux/sdk/qemuarm64",
     "wrlinuxsdk.sdktargetsysroot": "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.targettriplet}",

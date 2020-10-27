@@ -19,7 +19,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "/usr/bin/gdb",
+            "miDebuggerPath": "/ala-lpggp21/amann/vscode-wrlinux/sdk/qemuarm64/sysroots/x86_64-pokysdk-linux/usr/bin/aarch64-poky-linux/aarch64-poky-linux-gdb",
             "miDebuggerArgs": "",
             "customLaunchSetupCommands": [
                 {

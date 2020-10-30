@@ -25,6 +25,8 @@ OBJECTS=$(SOURCES:.c=.o)
 
 PROGRAM=hello
 
+RM=del
+
 .PHONY: all clean rebuild
 
 all: hello

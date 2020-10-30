@@ -9,7 +9,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/hello",
+            "program": "${workspaceFolder}\\hello",
             "args": [],
             "targetArchitecture": "x86_64",
             "stopAtEntry": true,

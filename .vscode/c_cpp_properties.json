@@ -1,21 +1,22 @@
 {
     "env": {
         "NOTE": "This is a temporary workaround for vscode-cpptools issue 6037",
-        "distroversion": "10.20.33.0",
-        "sdkversion": "20.33",
-        "gccversion": "10.1.0",
-        "hosttriplet": "x86_64-wrlinuxsdk-linux",
+        "distroversion": "10.19.45.12",
+        "sdkversion": "19.45",
+        "gccversion": "9.2.0",
+        "hosttriplet": "x86_64-wrlinuxsdk-mingw32",
         "targettriplet": "corei7-64-wrs-linux",
         "targetarchtriplet": "x86_64-wrs-linux",
-        "sdkroot": "/home/rcwoolley/wrlinuxcd/sdk/intel-x86-64"
+        "sdkroot": "C:\\wrlinuxsdk",
+        "sdktargetsysroot": "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.targettriplet}"
     },
     "configurations": [
         {
             "name": "WRLinux",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${env.sdkroot}/sysroots/${env.targettriplet}/usr/include",
-                "${env.sdkroot}/sysroots/${env.hosttriplet}/usr/lib/${env.targetarchtriplet}/gcc/${env.targetarchtriplet}/${env.gccversion}/include"
+                "${workspaceFolder}\\**",
+                "${env.sdkroot}\\sysroots\\${env.targettriplet}\\usr\\include",
+                "${env.sdkroot}\\sysroots\\${env.hosttriplet}\\usr\\lib\\${env.targetarchtriplet}\\gcc\\${env.targetarchtriplet}\\${env.gccversion}\\include"
             ],
             "defines": [
                 "__linux__",
@@ -25,8 +26,8 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}",
-                    "${config:wrlinuxsdk.sdkroot}/sysroots/${env.targettriplet}/usr/include",
-                    "${config:wrlinuxsdk.sdkroot}/sysroots/${env.hosttriplet}/usr/lib/${env.targetarchtriplet}/gcc/${env.targetarchtriplet}/${env.gccversion}/include"
+                    "${config:wrlinuxsdk.sdkroot}\\sysroots\\${env.targettriplet}\\usr\\include",
+                    "${config:wrlinuxsdk.sdkroot}\\sysroots\\${env.hosttriplet}\\usr\\lib\\${env.targetarchtriplet}\\gcc\\${env.targetarchtriplet}\\${env.gccversion}\\include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""

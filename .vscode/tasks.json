@@ -6,13 +6,13 @@
         "env": {
             "SDKROOT": "${config:wrlinuxsdk.sdkroot}",
             "SDKTARGETSYSROOT": "${config:wrlinuxsdk.sdktargetsysroot}",
-            "PATH": "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/../${config:wrlinuxsdk.hosttriplet}/bin:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/${config:wrlinuxsdk.targetarchtriplet}:${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/bin/${config:wrlinuxsdk.targetarchtriplet}-musl:${env:PATH}",
+            "PATH": "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\..\\${config:wrlinuxsdk.hosttriplet}\\bin;${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\${config:wrlinuxsdk.targetarchtriplet};${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\bin\\${config:wrlinuxsdk.targetarchtriplet}-musl;${env:PATH}",
             "PKG_CONFIG_SYSROOT_DIR": "${config:wrlinuxsdk.sdktargetsysroot}",
-            "PKG_CONFIG_PATH": "${config:wrlinuxsdk.sdktargetsysroot}/usr/lib/pkgconfig:${config:wrlinuxsdk.sdktargetsysroot}/usr/share/pkgconfig",
-            "CONFIG_SITE": "${config:wrlinuxsdk.sdkroot}/site-config-${config:wrlinuxsdk.targettriplet}",
-            "OECORE_NATIVE_SYSROOT": "${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}",
+            "PKG_CONFIG_PATH": "${config:wrlinuxsdk.sdktargetsysroot}\\usr\\lib\\pkgconfig;${config:wrlinuxsdk.sdktargetsysroot}\\usr\\share\\pkgconfig",
+            "CONFIG_SITE": "${config:wrlinuxsdk.sdkroot}\\site-config-${config:wrlinuxsdk.targettriplet}",
+            "OECORE_NATIVE_SYSROOT": "${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}",
             "OECORE_TARGET_SYSROOT": "${config:wrlinuxsdk.sdktargetsysroot}",
-            "OECORE_ACLOCAL_OPTS": "-I ${config:wrlinuxsdk.sdkroot}/sysroots/${config:wrlinuxsdk.hosttriplet}/usr/share/aclocal",
+            "OECORE_ACLOCAL_OPTS": "-I ${config:wrlinuxsdk.sdkroot}\\sysroots\\${config:wrlinuxsdk.hosttriplet}\\usr\\share\\aclocal",
             "OECORE_BASELIB": "lib",
             "OECORE_TARGET_ARCH": "x86_64",
             "OECORE_TARGET_OS": "linux",
@@ -46,7 +46,7 @@
         {
             "label": "Print Environment Variables",
             "type": "shell",
-            "command": "printenv",
+            "command": "set",
             "args": [
             ],
             "problemMatcher": [
@@ -59,13 +59,13 @@
         {
             "label": "WRLinux SDK GCC C Compiler",
             "type": "shell",
-            "command": "$CC",
+            "command": "%CC%",
             "args": [
                 "-g",
-                "${CFLAGS}",
+                "%CFLAGS%",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}\\${fileBasenameNoExtension}"
             ],
             "problemMatcher": [
                 "$gcc"
@@ -113,7 +113,7 @@
                 "command": "start -FilePath 'qemu-system-x86_64' -ArgumentList '-S -gdb tcp::1234 -boot d -cdrom wrlinux.iso -m 512'"
             },
             "linux": {
-                "command": "qemu-system-x86_64 -device virtio-net,netdev=net0 -netdev user,id=net0,hostfwd=tcp::1234-:1234 -m 512 -drive if=none,id=hd,file=${workspaceFolder}/boot-image-qemu.hddimg,format=raw -device virtio-scsi-pci,id=scsi -device scsi-hd,drive=hd -cpu kvm64 -enable-kvm -nographic -drive if=pflash,format=qcow2,file=ovmf.qcow2"
+                "command": "qemu-system-x86_64 -device virtio-net,netdev=net0 -netdev user,id=net0,hostfwd=tcp::1234-:1234 -m 512 -drive if=none,id=hd,file=${workspaceFolder}\\boot-image-qemu.hddimg,format=raw -device virtio-scsi-pci,id=scsi -device scsi-hd,drive=hd -cpu kvm64 -enable-kvm -nographic -drive if=pflash,format=qcow2,file=ovmf.qcow2"
             },
             "problemMatcher": []
         }
